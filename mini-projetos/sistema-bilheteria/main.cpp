@@ -8,22 +8,20 @@ using namespace std;
 #define FIL 15
 #define POL 40
 char **poltronas;
-int i;
-int j;
 int qtdOcupado;
 int valorBilheteria;
 
 void mostrar_mapa()
 {	
-	for(i=0; FIL>i; ++i)
+	for(int i = 0; i < FIL; ++i)
 	{
-		for(j=0; POL>j; ++j)
+		for(int j = 0; j < POL; ++j)
 		{
 			cout << "|" << poltronas[i][j];
 		}
 		
 		cout << "|" << endl;
-	};	
+	}	
 	
 	cout << endl;
 	system("pause");
@@ -34,27 +32,25 @@ void calcular_faturamento()
 	qtdOcupado = 0;
 	valorBilheteria = 0;
 	
-	for(i=0; FIL>i; ++i)
+	for(int i=0; i < FIL; ++i)
 	{
-		for(j=0; POL>j; ++j)
+		for(int j = 0; j < POL; ++j)
 		{
 			if(poltronas[i][j] == '#')
 			{
 				qtdOcupado = qtdOcupado+1;
 				
-				++i;
-				if(i <= 5)
+				if(i+1 <= 5)
 				{
-					valorBilheteria = valorBilheteria + 50;
-				} else if(i <= 10)
+					valorBilheteria += 50;
+				} else if(i+1 <= 10)
 				{
-					valorBilheteria = valorBilheteria + 30;
+					valorBilheteria += 30;
 				}
 				else
 				{
-					valorBilheteria = valorBilheteria + 15;
+					valorBilheteria += 15;
 				}
-				--i;
 			}
 		}
 	}
@@ -65,18 +61,20 @@ int main(int argc, char** argv)
 	setlocale(LC_ALL, "");
 	
 	int c;
+	int i;
+	int j;
 	poltronas = new char*[FIL];
-	for(i=0; FIL>i; ++i)
+	for(int i=0; i < FIL; ++i)
 	{
 		poltronas[i] = new char[POL];
-	};
-	for(i=0; FIL>i; ++i)
+	}
+	for(int i = 0; i < FIL; ++i)
 	{
-		for(j=0; POL>j; ++j)
+		for(int j = 0; j < POL; ++j)
 		{
 			poltronas[i][j] = '.';
 		}
-	};
+	}
 	
 	do
 	{
@@ -152,6 +150,12 @@ int main(int argc, char** argv)
 		
 		system("cls");
 	} while(c > 0);
+	
+	for(int i = 0; i < FIL; ++i)
+	{
+    	delete[] poltronas[i];
+	}
+	delete[] poltronas;
 	
 	return 0;
 }
