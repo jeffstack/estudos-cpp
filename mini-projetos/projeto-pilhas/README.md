@@ -1,9 +1,5 @@
 # 📚 Pilhas de Números Pares e Ímpares
 
-Trabalho da disciplina de **Estrutura de Dados**.
-
-## 📋 Descrição
-
 Programa em C++ que lê 30 números inteiros em ordem crescente e os distribui em pilhas separadas conforme a paridade (par ou ímpar). Ao final, os valores são desempilhados e exibidos em ordem decrescente.
 
 A solução foi implementada de duas formas:
