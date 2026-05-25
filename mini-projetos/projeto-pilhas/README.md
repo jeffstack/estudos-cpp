@@ -44,9 +44,3 @@ Numeros impares (decrescente):
 
 Numeros pares (decrescente):
 30 28 26 ...
-```
-
-## 👥 Autores
-
-- Jefferson Nascimento dos Santos
-- João Pedro Badaro
